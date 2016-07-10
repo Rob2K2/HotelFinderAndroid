@@ -10,44 +10,31 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity {
+import net.macaws.it.hotelfinderandroid.http.LoginAsyncTask;
+import net.macaws.it.hotelfinderandroid.model.User;
 
-    private EditText username;
-    private EditText password;
+public class LoginActivity extends AppCompatActivity {
+    private EditText usernameEditText;
+    private EditText passwordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        username = (EditText)findViewById(R.id.editUsername);
-        password = (EditText)findViewById(R.id.editPassword);
+        usernameEditText = (EditText)findViewById(R.id.editUsername);
+        passwordEditText = (EditText)findViewById(R.id.editPassword);
     }
 
-    public void loginClick(View view) {
+    public void onLoginClick(View view) {
+        String username = usernameEditText.getText().toString();
+        String password = passwordEditText.getText().toString();
+        //RequestUsersAsyncTask task = new RequestUsersAsyncTask();
+        //task.execute();
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
 
-        Log.d("LoginActivity", "You clicked me!");
-        Log.d("LoginActivity", "Username: " + username.getText());
-        Log.d("LoginActivity", "Password: " + password.getText());
-        String rightUsername = "admin";
-        String rightPassword = "foobar";
-
-        if (rightUsername.equals(username.getText().toString()) &&
-                rightPassword.equals(password.getText().toString())) {
-            Toast.makeText(this, R.string.login_success, Toast.LENGTH_LONG).show();
-            // SharedPreferences hace referencia a un archivo
-            // de configuracion
-            SharedPreferences preferences =
-                    getSharedPreferences(getString(R.string.app_name), // Nombre archivo
-                            Context.MODE_PRIVATE); // Solo nuestra app puede leer esto
-            SharedPreferences.Editor editor = preferences.edit(); // Abrir el archivo para escritura
-            editor.putString("username", username.getText().toString()); // Almacenar el valor
-            editor.commit(); // Guardar cambios
-
-            Intent intent = new Intent(this, DashboardActivity.class);
-            startActivity(intent);
-        } else {
-            Toast.makeText(this, R.string.login_failed, Toast.LENGTH_LONG).show();
-        }
+        LoginAsyncTask task = new LoginAsyncTask(this);
+        task.execute(user);
     }
 }

@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="#ff0000"
-            android:onClick="loginClick"
+            android:onClick="onLoginClick"
             android:text="@string/login"
             android:textColor="#ffffff" />
 

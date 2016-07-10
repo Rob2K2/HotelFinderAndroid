@@ -9,9 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import net.macaws.it.hotelfinderandroid.LoginActivity;
-import net.macaws.it.hotelfinderandroid.R;
-
 public class DashboardActivity extends AppCompatActivity {
 
     @Override
@@ -21,13 +18,13 @@ public class DashboardActivity extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences(
                 getString(R.string.app_name), MODE_PRIVATE);
-        String username = preferences.getString("username", "");
-        if (username.isEmpty()) {
+        int user_id = preferences.getInt("user_id", 0);
+        if (user_id == 0) {
             // Usuario no logeado
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
         } else {
-            Toast.makeText(this, "Username: " + username, Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "user_id: " + user_id, Toast.LENGTH_LONG).show();
         }
     }
 
@@ -35,6 +32,7 @@ public class DashboardActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.dashboard_menu, menu);
+
         return true;
     }
 
@@ -52,7 +50,7 @@ public class DashboardActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(
                 getString(R.string.app_name), MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.remove("username");
+        editor.remove("user_id");
         editor.commit();
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
