@@ -1,5 +1,6 @@
 package net.macaws.it.hotelfinderandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -35,6 +36,12 @@ public class PostFragment extends Fragment {
                 Post p = adapter.getItem(position);
 
                 Toast.makeText(getActivity(), p.getTitle(), Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(getActivity(), DetailActivity.class);
+                intent.putExtra("title",p.getTitle());
+                intent.putExtra("content",p.getContent());
+                intent.putExtra("image",p.getUser().getPicture_url());
+                startActivity(intent);
             }
         });
 

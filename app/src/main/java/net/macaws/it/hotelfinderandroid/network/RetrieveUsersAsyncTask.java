@@ -18,7 +18,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Rob on 10/07/2016.
  */
 public class RetrieveUsersAsyncTask extends AsyncTask<Void, Void, List<User>> {
-
     private UserFragment fragment;
 
     public RetrieveUsersAsyncTask(UserFragment userFragment) {

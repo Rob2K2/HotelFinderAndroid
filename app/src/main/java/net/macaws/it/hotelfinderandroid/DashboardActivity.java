@@ -36,12 +36,12 @@ public class DashboardActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setElevation(0);
         }
-        tabLayout = (TabLayout)findViewById(R.id.tab_layout);
+        tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
         tabLayout.addTab(tabLayout.newTab().setText("Posts"));
         tabLayout.addTab(tabLayout.newTab().setText("Users"));
 
-        viewPager = (ViewPager)findViewById(R.id.view_pager);
+        viewPager = (ViewPager) findViewById(R.id.view_pager);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
@@ -79,6 +79,9 @@ public class DashboardActivity extends AppCompatActivity {
             case R.id.logout_option:
                 logout();
                 return true;
+            case R.id.new_post_option:
+                newPost();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -90,6 +93,12 @@ public class DashboardActivity extends AppCompatActivity {
         editor.remove("user_id");
         editor.commit();
         Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    private void newPost() {
+
+        Intent intent = new Intent(this, NewPostActivity.class);
         startActivity(intent);
     }
 }

@@ -14,7 +14,6 @@ import net.macaws.it.hotelfinderandroid.network.RetrieveUsersAsyncTask;
  * Created by Rob on 10/07/2016.
  */
 public class UserFragment extends Fragment {
-
     private ListView listView;
     private UserAdapter adapter;
 

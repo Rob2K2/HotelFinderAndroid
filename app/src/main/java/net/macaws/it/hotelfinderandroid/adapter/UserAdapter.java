@@ -14,7 +14,6 @@ import net.macaws.it.hotelfinderandroid.model.User;
  * Created by Rob on 10/07/2016.
  */
 public class UserAdapter extends ArrayAdapter<User> {
-
     public UserAdapter(Context context) {
         super(context, R.layout.user_item_layout);
     }

@@ -6,4 +6,8 @@
     <string name="login_success">Login successful</string>
     <string name="login_failed">Login failed</string>
     <string name="logout">Logout</string>
+    <string name="new_post">New Post</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="save">SAVE</string>
 </resources>
