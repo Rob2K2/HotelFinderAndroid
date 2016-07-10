@@ -1,16 +1,11 @@
 package net.macaws.it.hotelfinderandroid;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import net.macaws.it.hotelfinderandroid.http.LoginAsyncTask;
+import net.macaws.it.hotelfinderandroid.network.LoginAsyncTask;
 import net.macaws.it.hotelfinderandroid.model.User;
 
 public class LoginActivity extends AppCompatActivity {

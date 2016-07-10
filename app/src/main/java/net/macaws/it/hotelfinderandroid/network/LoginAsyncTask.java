@@ -1,4 +1,4 @@
-package net.macaws.it.hotelfinderandroid.http;
+package net.macaws.it.hotelfinderandroid.network;
 
 import android.content.Context;
 import android.content.Intent;
@@ -34,7 +34,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, User> {
                 .baseUrl("http://dip-androiducbv2.herokuapp.com")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        UsersService service = retrofit.create(UsersService.class);
+        UserService service = retrofit.create(UserService.class);
         Call<User> call = service.login(params[0]);
         try {
             Response<User> response = call.execute();

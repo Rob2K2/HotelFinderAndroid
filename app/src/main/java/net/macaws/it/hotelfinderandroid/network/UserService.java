@@ -1,4 +1,4 @@
-package net.macaws.it.hotelfinderandroid.http;
+package net.macaws.it.hotelfinderandroid.network;
 
 import net.macaws.it.hotelfinderandroid.model.User;
 
@@ -12,7 +12,7 @@ import retrofit2.http.POST;
 /**
  * Created by Rob on 09/07/2016.
  */
-public interface UsersService {
+public interface UserService {
     @GET("/users.json")
     Call<List<User>> getAllUsers();
     @POST("/login.json")
