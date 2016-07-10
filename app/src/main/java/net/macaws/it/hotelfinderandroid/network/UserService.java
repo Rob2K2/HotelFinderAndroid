@@ -17,4 +17,6 @@ public interface UserService {
     Call<List<User>> getAllUsers();
     @POST("/login.json")
     Call<User> login(@Body User user);
+    @GET("users")
+    Call<List<User>> getUsers();
 }

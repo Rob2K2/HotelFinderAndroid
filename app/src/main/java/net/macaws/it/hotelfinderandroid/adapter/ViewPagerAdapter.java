@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import net.macaws.it.hotelfinderandroid.PostFragment;
+import net.macaws.it.hotelfinderandroid.UserFragment;
 
 /**
  * Created by Rob on 10/07/2016.
@@ -20,7 +21,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new PostFragment();
             case 1:
-                return new Fragment();
+                return new UserFragment();
             default:
                 return null;
         }
