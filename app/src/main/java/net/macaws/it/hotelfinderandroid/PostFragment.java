@@ -38,9 +38,8 @@ public class PostFragment extends Fragment {
                 Toast.makeText(getActivity(), p.getTitle(), Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
-                intent.putExtra("title",p.getTitle());
-                intent.putExtra("content",p.getContent());
-                intent.putExtra("image",p.getUser().getPicture_url());
+
+                intent.putExtra("POST", p);
                 startActivity(intent);
             }
         });

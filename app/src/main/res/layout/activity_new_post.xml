@@ -14,7 +14,6 @@
         android:id="@+id/editTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_marginTop="50dp"
         android:hint="@string/title"
         android:inputType="text" />
@@ -24,8 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:hint="@string/content"
-        android:inputType="textPassword" />
+        android:hint="@string/content" />
 
     <Button
         android:id="@+id/btnSave"

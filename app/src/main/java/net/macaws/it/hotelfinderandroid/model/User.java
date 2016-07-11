@@ -1,12 +1,13 @@
 package net.macaws.it.hotelfinderandroid.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Rob on 09/07/2016.
  */
-public class User {
+public class User implements Serializable {
     private int id;
     private String password;
 

@@ -13,7 +13,7 @@ import retrofit2.http.POST;
  * Created by Rob on 09/07/2016.
  */
 public interface UserService {
-    @POST("/login.json")
+    @POST("/login")
     Call<User> login(@Body User user);
 
     @GET("users")
