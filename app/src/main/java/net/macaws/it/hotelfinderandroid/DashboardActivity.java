@@ -40,6 +40,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         tabLayout.addTab(tabLayout.newTab().setText("Posts"));
         tabLayout.addTab(tabLayout.newTab().setText("Users"));
+        tabLayout.addTab(tabLayout.newTab().setText("Hotels"));
 
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());

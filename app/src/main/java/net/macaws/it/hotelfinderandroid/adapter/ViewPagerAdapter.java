@@ -4,6 +4,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+import net.macaws.it.hotelfinderandroid.HotelFragment;
 import net.macaws.it.hotelfinderandroid.PostFragment;
 import net.macaws.it.hotelfinderandroid.UserFragment;
 
@@ -22,6 +23,8 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
                 return new PostFragment();
             case 1:
                 return new UserFragment();
+            case 2:
+                return new HotelFragment();
             default:
                 return null;
         }
@@ -29,6 +32,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 }

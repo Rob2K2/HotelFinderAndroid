@@ -17,6 +17,9 @@ public interface PostService {
     @GET("posts?user_id=7")
     Call<List<Post>> getPosts();
 
+   // @GET("hotels.php")
+    //Call<List<Post>> getPosts();
+
     @POST("/posts?user_id=7")
     Call<Post> savePost(@Body Post post);
 }

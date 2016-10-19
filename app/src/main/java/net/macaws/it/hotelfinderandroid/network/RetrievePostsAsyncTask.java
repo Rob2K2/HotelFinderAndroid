@@ -27,6 +27,7 @@ public class RetrievePostsAsyncTask extends AsyncTask<Void, Void, List<Post>> {
     @Override
     protected List<Post> doInBackground(Void... params) {
         Retrofit retrofit = new Retrofit.Builder()
+                //.baseUrl("http://www.macaws.net/hf/json/")
                 .baseUrl("http://dip-androiducbv2.herokuapp.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
