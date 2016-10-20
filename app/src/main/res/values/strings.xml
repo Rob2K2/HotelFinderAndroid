@@ -10,4 +10,6 @@
     <string name="title">Title</string>
     <string name="content">Content</string>
     <string name="save">SAVE</string>
+    <string name="search_hint">Enter Location e.g. Cochabamba, La Paz, Santa Cruz</string>
+    <string name="search_button">Search Location</string>
 </resources>

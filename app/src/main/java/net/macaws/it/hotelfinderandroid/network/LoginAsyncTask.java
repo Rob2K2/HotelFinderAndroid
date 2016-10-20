@@ -9,6 +9,7 @@ import android.widget.Toast;
 import net.macaws.it.hotelfinderandroid.DashboardActivity;
 import net.macaws.it.hotelfinderandroid.LoginActivity;
 import net.macaws.it.hotelfinderandroid.R;
+import net.macaws.it.hotelfinderandroid.SearchActivity;
 import net.macaws.it.hotelfinderandroid.model.User;
 
 import java.io.IOException;
@@ -63,7 +64,8 @@ public class LoginAsyncTask extends AsyncTask<User, Void, User> {
             Toast.makeText(activity,
                     "Login successful, username: " + user.getUsername(),
                     Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(activity, DashboardActivity.class);
+            Intent intent = new Intent(activity, SearchActivity.class);
+            //intent.putExtra("nombre", user.getUsername());
             activity.startActivity(intent);
         }
     }

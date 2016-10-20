@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -38,12 +39,19 @@ public class HotelAdapter extends ArrayAdapter<Hotel> {
         }
 
         TextView nameTextView = (TextView)currentView.findViewById(R.id.hotel_title_text_view);
-        TextView summaryTextView = (TextView)currentView.findViewById(R.id.hotel_content_text_view);
-        CircleImageView hotelImageView = (CircleImageView) currentView.findViewById(R.id.hotel_image_view);
+        TextView phoneTextView = (TextView)currentView.findViewById(R.id.hotel_phone_text_view);
+        TextView addressTextView = (TextView)currentView.findViewById(R.id.hotel_address_text_view);
+        TextView webTextView = (TextView)currentView.findViewById(R.id.hotel_web_text_view);
+        TextView cityTextView = (TextView)currentView.findViewById(R.id.hotel_city_text_view);
+        ImageView hotelImageView = (ImageView) currentView.findViewById(R.id.hotel_image_view);
 
         nameTextView.setText(hotel.getName());
-        summaryTextView.setText(hotel.getSummary());
-        Glide.with(getContext()).load(hotel.getUrlImage()).into(hotelImageView);
+        phoneTextView.setText(hotel.getPhone());
+        addressTextView.setText(hotel.getAddress());
+        webTextView.setText(hotel.getWeb());
+        cityTextView.setText(hotel.getCity());
+
+        Glide.with(getContext()).load(hotel.getUrlThumb()).into(hotelImageView);
 
         return currentView;
     }
