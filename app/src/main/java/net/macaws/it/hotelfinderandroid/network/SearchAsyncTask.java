@@ -1,8 +1,11 @@
 package net.macaws.it.hotelfinderandroid.network;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 
+import net.macaws.it.hotelfinderandroid.Dashboard2Activity;
 import net.macaws.it.hotelfinderandroid.HotelFragment;
+import net.macaws.it.hotelfinderandroid.SearchActivity;
 import net.macaws.it.hotelfinderandroid.model.Hotel;
 
 import java.io.IOException;
@@ -15,19 +18,19 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by Rob on 19/10/2016.
+ * Created by Rob on 20/10/2016.
  */
 
-public class RetrieveHotelsAsyncTask extends AsyncTask<Void, Void, ArrayList<Hotel>> {
+public class SearchAsyncTask extends AsyncTask<String, Void, ArrayList<Hotel>> {
 
-    private HotelFragment fragment;
+    private SearchActivity activity;
 
-    public RetrieveHotelsAsyncTask(HotelFragment hotelFragment) {
-        this.fragment = hotelFragment;
+    public SearchAsyncTask(SearchActivity activity) {
+        this.activity = activity;
     }
 
     @Override
-    protected ArrayList<Hotel> doInBackground(Void... params) {
+    protected ArrayList<Hotel> doInBackground(String... params) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://www.macaws.net/hf/json/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -47,7 +50,9 @@ public class RetrieveHotelsAsyncTask extends AsyncTask<Void, Void, ArrayList<Hot
 
     @Override
     protected void onPostExecute(ArrayList<Hotel> hotels) {
-        fragment.getAdapter().clear();
-        fragment.getAdapter().addAll(hotels);
+
+        Intent intent = new Intent(activity, Dashboard2Activity.class);
+        intent.putExtra("hotels", hotels);
+        activity.startActivity(intent);
     }
 }

@@ -2,6 +2,7 @@ package net.macaws.it.hotelfinderandroid.network;
 
 import net.macaws.it.hotelfinderandroid.model.Hotel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -18,5 +19,5 @@ public interface HotelService {
     Call<List<Hotel>> getHotels(@Query("city") String city);
 
     @GET("hotels.php")
-    Call<List<Hotel>> getHotels();
+    Call<ArrayList<Hotel>> getHotels();
 }

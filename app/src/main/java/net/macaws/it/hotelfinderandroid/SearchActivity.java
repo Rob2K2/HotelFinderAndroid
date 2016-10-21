@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import net.macaws.it.hotelfinderandroid.network.SearchAsyncTask;
+
 public class SearchActivity extends AppCompatActivity {
 
     private EditText searchEditText;
@@ -24,8 +26,12 @@ public class SearchActivity extends AppCompatActivity {
         String location = searchEditText.getText().toString();
 
         Toast.makeText(this, "Location to look for: " + location, Toast.LENGTH_LONG).show();
+        /*
         Intent intent = new Intent(this, DashboardActivity.class);
         intent.putExtra("city", location);
         this.startActivity(intent);
+        */
+        SearchAsyncTask task = new SearchAsyncTask(this);
+        task.execute(location);
     }
 }
