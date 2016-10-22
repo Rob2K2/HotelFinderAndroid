@@ -16,7 +16,7 @@ import retrofit2.http.Query;
 public interface HotelService {
 
     @GET("hotels.php")
-    Call<List<Hotel>> getHotels(@Query("city") String city);
+    Call<ArrayList<Hotel>> getHotels(@Query("city") String city);
 
     @GET("hotels.php")
     Call<ArrayList<Hotel>> getHotels();

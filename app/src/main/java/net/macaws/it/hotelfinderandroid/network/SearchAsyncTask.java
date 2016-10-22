@@ -36,7 +36,7 @@ public class SearchAsyncTask extends AsyncTask<String, Void, ArrayList<Hotel>> {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         HotelService service = retrofit.create(HotelService.class);
-        Call<ArrayList<Hotel>> call = service.getHotels();
+        Call<ArrayList<Hotel>> call = service.getHotels(params[0]);
 
         try {
             Response<ArrayList<Hotel>> response = call.execute();
