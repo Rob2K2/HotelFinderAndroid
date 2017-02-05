@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import net.macaws.it.hotelfinderandroid.model.Hotel;
 import net.macaws.it.hotelfinderandroid.model.Post;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -23,12 +24,11 @@ public class DetailActivity extends AppCompatActivity {
         TextView contentTextView = (TextView)findViewById(R.id.txtContent);
         CircleImageView profileImageView = (CircleImageView) findViewById(R.id.profile_image_view);
 
-        Post post = (Post)(getIntent().getSerializableExtra("POST"));
-        if (post != null) {
-            titleTextView.setText(post.getTitle());
-            contentTextView.setText(post.getContent());
-            Glide.with(this).load(post.getUser().getPicture_url()).into(profileImageView);
-
+        Hotel hotel = (Hotel)(getIntent().getSerializableExtra("HOTEL"));
+        if (hotel != null) {
+            titleTextView.setText(hotel.getName());
+            contentTextView.setText(hotel.getAddress());
+            Glide.with(this).load(hotel.getUrlImage()).into(profileImageView);
         }
     }
 }
