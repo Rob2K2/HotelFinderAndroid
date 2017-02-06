@@ -36,7 +36,7 @@ public class Dashboard2Activity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Hotel h = arrayAdapter.getItem(position);
-                Toast.makeText(Dashboard2Activity.this, "Details for hotel: " + h.getName(), Toast.LENGTH_LONG).show();
+                Toast.makeText(Dashboard2Activity.this, "Details for hotel: " + h.getName(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Dashboard2Activity.this, DetailActivity.class);
                 intent.putExtra("HOTEL", h);
                 startActivity(intent);

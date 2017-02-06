@@ -17,7 +17,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:hint="@string/search_hint"
-        android:inputType="text" />
+        android:inputType="text"
+        android:text="Cochabamba" />
 
     <Button
         android:id="@+id/search_button"

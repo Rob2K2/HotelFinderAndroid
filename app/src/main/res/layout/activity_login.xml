@@ -28,7 +28,8 @@
 
             android:layout_marginTop="50dp"
             android:hint="@string/username"
-            android:inputType="text" />
+            android:inputType="text"
+            android:text="example1" />
 
         <EditText
             android:id="@+id/editPassword"
@@ -36,7 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:hint="@string/password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:text="foobar!1" />
 
         <Button
             android:id="@+id/btnLogin"
