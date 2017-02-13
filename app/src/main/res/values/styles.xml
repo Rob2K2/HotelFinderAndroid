@@ -1,11 +1,37 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#000066</item>
-        <item name="colorPrimaryDark">#000044</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Login -->
+    <style name="AppTheme.Login" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@color/colorPrimary</item>
+    </style>
+
+    <style name="LoginTextField" parent="AppTheme">
+        <item name="colorAccent">@android:color/holo_red_dark</item>
+        <item name="android:textColorHint">@android:color/holo_red_dark</item>
+        <item name="colorControlNormal">@android:color/holo_red_dark</item>
+        <item name="colorControlActivated">@android:color/holo_red_dark</item>
+        <item name="colorControlHighlight">@android:color/holo_red_dark</item>
+    </style>
+
+    <style name="WhiteProgress">
+        <item name="colorAccent">@android:color/holo_red_light</item>
     </style>
 
 </resources>

@@ -20,17 +20,16 @@
             android:id="@+id/hotel_title_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textSize="20sp"
-            />
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/hotel_phone_text_view"
+            android:id="@+id/hotel_address_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/hotel_address_text_view"
+            android:id="@+id/hotel_phone_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

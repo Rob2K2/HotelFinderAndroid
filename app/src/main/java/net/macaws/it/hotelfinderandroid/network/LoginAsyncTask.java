@@ -65,7 +65,7 @@ public class LoginAsyncTask extends AsyncTask<User, Void, User> {
                     "Login successful, username: " + user.getUsername(),
                     Toast.LENGTH_LONG).show();
             Intent intent = new Intent(activity, SearchActivity.class);
-            //intent.putExtra("nombre", user.getUsername());
+            //intent.putExtra("nombre", User.getUsername());
             activity.startActivity(intent);
         }
     }

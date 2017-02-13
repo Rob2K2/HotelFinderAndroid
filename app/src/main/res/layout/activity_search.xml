@@ -11,11 +11,20 @@
     tools:context="net.macaws.it.hotelfinderandroid.SearchActivity"
     android:orientation="vertical">
 
+    <TextView
+        android:text="SEARCH"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/search_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="150dp"
         android:hint="@string/search_hint"
         android:inputType="text"
         android:text="Cochabamba" />

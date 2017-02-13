@@ -85,20 +85,20 @@ public class DashboardActivity extends AppCompatActivity {
             case R.id.logout_option:
                 logout();
                 return true;
-            case R.id.new_post_option:
+           /* case R.id.new_post_option:
                 newPost();
-                return true;
+                return true;*/
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void logout() {
-        SharedPreferences preferences = getSharedPreferences(
+       /* SharedPreferences preferences = getSharedPreferences(
                 getString(R.string.app_name), MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.remove("user_id");
-        editor.commit();
-        Intent intent = new Intent(this, LoginActivity.class);
+        editor.commit();*/
+        Intent intent = new Intent(this, SigninActivity.class);
         startActivity(intent);
     }
 
