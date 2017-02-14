@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import net.macaws.it.hotelfinderandroid.data.prefs.SearchPrefs;
 import net.macaws.it.hotelfinderandroid.data.prefs.SessionPrefs;
 import net.macaws.it.hotelfinderandroid.network.SearchAsyncTask;
 
@@ -29,6 +30,9 @@ public class SearchActivity extends AppCompatActivity {
         String location = searchEditText.getText().toString();
 
         Toast.makeText(this, "Location to look for: " + location, Toast.LENGTH_SHORT).show();
+
+        // Guardar afiliado en preferencias
+        SearchPrefs.get(SearchActivity.this).saveSearch(location);
 
         SearchAsyncTask task = new SearchAsyncTask(this);
         task.execute(location);
