@@ -10,4 +10,8 @@
         android:id="@+id/logout_option"
         android:title="@string/logout"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/maps_option"
+        android:title="Maps"
+        app:showAsAction="never" />
 </menu>

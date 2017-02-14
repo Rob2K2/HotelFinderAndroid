@@ -64,6 +64,9 @@ public class Dashboard2Activity extends AppCompatActivity {
             case R.id.profile_option:
                 profile();
                 return true;
+            case R.id.maps_option:
+                maps();
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -78,6 +81,12 @@ public class Dashboard2Activity extends AppCompatActivity {
     private void profile() {
 
         Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+    }
+
+    private void maps() {
+
+        Intent intent = new Intent(this, MapsActivity.class);
         startActivity(intent);
     }
 }

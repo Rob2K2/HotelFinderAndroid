@@ -33,4 +33,5 @@
     <string name="user_information">USER INFORMATION</string>
     <string name="password_information">PASSWORD</string>
     <string name="txtResults">RESULTS:</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
