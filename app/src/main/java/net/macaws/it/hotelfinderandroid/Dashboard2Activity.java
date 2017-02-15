@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,8 +14,6 @@ import android.widget.Toast;
 import net.macaws.it.hotelfinderandroid.adapter.HotelAdapter;
 import net.macaws.it.hotelfinderandroid.data.prefs.SessionPrefs;
 import net.macaws.it.hotelfinderandroid.model.Hotel;
-import net.macaws.it.hotelfinderandroid.model.Post;
-import net.macaws.it.hotelfinderandroid.network.SearchAsyncTask;
 import net.macaws.it.hotelfinderandroid.network.SearchMapAsyncTask;
 
 import java.util.ArrayList;

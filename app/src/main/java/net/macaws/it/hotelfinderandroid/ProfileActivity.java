@@ -1,15 +1,11 @@
 package net.macaws.it.hotelfinderandroid;
 
-import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import net.macaws.it.hotelfinderandroid.data.prefs.SessionPrefs;
 
 public class ProfileActivity extends AppCompatActivity {
     public static final String PREFS_NAME = "HOTEL_FINDER_PREFS";

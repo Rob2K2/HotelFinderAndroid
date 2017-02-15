@@ -1,18 +1,13 @@
 package net.macaws.it.hotelfinderandroid;
 
-import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
 import net.macaws.it.hotelfinderandroid.model.Hotel;
-import net.macaws.it.hotelfinderandroid.model.Post;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DetailActivity extends AppCompatActivity {
 

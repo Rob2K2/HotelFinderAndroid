@@ -14,7 +14,7 @@ import net.macaws.it.hotelfinderandroid.R;
 import net.macaws.it.hotelfinderandroid.model.Hotel;
 
 
-import de.hdodenhof.circleimageview.CircleImageView;
+
 
 /**
  * Created by Rob on 19/10/2016.
