@@ -1,5 +1,6 @@
 package net.macaws.it.hotelfinderandroid;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
@@ -10,6 +11,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import net.macaws.it.hotelfinderandroid.model.Hotel;
+
+import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -38,12 +43,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng cochabamba = new LatLng(-17.3895, -66.1568);
-        mMap.addMarker(new MarkerOptions().position(cochabamba).title("Marker in Cochabamba"));
-        CameraPosition cameraPosition = CameraPosition.builder()
-                .target(cochabamba)
-                .zoom(10)
-                .build();
-        mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+        Intent h = getIntent();
+        ArrayList<Hotel> hoteles = (ArrayList<Hotel>) h.getSerializableExtra("hotels");
+
+        if (hoteles.size() > 0) {
+
+            for (int i = 0; i < hoteles.size(); i++) {
+                LatLng hotelLocation = new LatLng(hoteles.get(i).getLatitude(), hoteles.get(i).getLongitude());
+                String hotelMarker = hoteles.get(i).getName();
+                mMap.addMarker(new MarkerOptions().position(hotelLocation).title(hotelMarker));
+            }
+            CameraPosition cameraPosition = CameraPosition.builder()
+                    .target(new LatLng(hoteles.get(0).getLatitude(), hoteles.get(0).getLongitude()))
+                    .zoom(11)
+                    .build();
+            mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        }
     }
 }

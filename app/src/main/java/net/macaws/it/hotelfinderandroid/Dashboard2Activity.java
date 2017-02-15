@@ -16,11 +16,14 @@ import net.macaws.it.hotelfinderandroid.adapter.HotelAdapter;
 import net.macaws.it.hotelfinderandroid.data.prefs.SessionPrefs;
 import net.macaws.it.hotelfinderandroid.model.Hotel;
 import net.macaws.it.hotelfinderandroid.model.Post;
+import net.macaws.it.hotelfinderandroid.network.SearchAsyncTask;
+import net.macaws.it.hotelfinderandroid.network.SearchMapAsyncTask;
 
 import java.util.ArrayList;
 
 public class Dashboard2Activity extends AppCompatActivity {
-
+    public static final String PREFS_NAME = "HOTEL_FINDER_SEARCH_PREFS";
+    public static final String PREF_SEARCH = "PREF_SEARCH";
     private ListView listView;
 
     @Override
@@ -86,7 +89,9 @@ public class Dashboard2Activity extends AppCompatActivity {
 
     private void maps() {
 
-        Intent intent = new Intent(this, MapsActivity.class);
-        startActivity(intent);
+        SharedPreferences myPrefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String location = myPrefs.getString(PREF_SEARCH, "");
+        SearchMapAsyncTask task = new SearchMapAsyncTask(this);
+        task.execute(location);
     }
 }

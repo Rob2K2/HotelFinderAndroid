@@ -24,8 +24,8 @@ public class Hotel implements Serializable {
     private String familiar;
     private String matrimonial;
     private String city;
-    private String latitude;
-    private String longitude;
+    private double latitude;
+    private double longitude;
 
     public Hotel() {
         hotelId = 0;
@@ -174,19 +174,19 @@ public class Hotel implements Serializable {
         this.doble = doble;
     }
 
-    public String getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 }
