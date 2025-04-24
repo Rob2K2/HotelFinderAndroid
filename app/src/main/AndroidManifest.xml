@@ -28,7 +28,8 @@
         <activity android:name=".Dashboard2Activity" />
         <activity
             android:name=".SigninActivity"
-            android:label="@string/title_activity_signin">
+            android:label="@string/title_activity_signin"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
